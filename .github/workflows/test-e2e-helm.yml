@@ -1,30 +1,7 @@
 name: 'Test: E2E Helm Chart'
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/test-e2e-helm.yml'
-      - 'packages/testing/containers/helm-stack.ts'
-      - 'packages/testing/containers/helm-start-stack.ts'
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to test'
-        required: false
-        default: ''
-      helm-chart-ref:
-        description: 'n8n-hosting branch/tag for Helm chart'
-        required: false
-        default: 'main'
-      mode:
-        description: 'Deployment mode to test'
-        required: true
-        type: choice
-        options:
-          - standalone
-          - queue
-        default: 'queue'
-
 env:
   DOCKER_IMAGE: ghcr.io/${{ github.repository }}:ci-${{ github.run_id }}
   HELM_CHART_REF: ${{ inputs.helm-chart-ref || 'main' }}
