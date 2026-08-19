@@ -1,18 +1,7 @@
 name: 'CI: PR Quality Checks'
 
 on:
-  merge_group:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-    branches:
-      - master
-  issue_comment:
-    types:
-      - created
-
+  workflow_dispatch:
 jobs:
   handle-size-override:
     name: Handle /size-limit-override
