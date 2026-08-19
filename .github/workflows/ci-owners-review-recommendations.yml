@@ -6,14 +6,7 @@ name: 'CI: Owners Review Recommendations'
 # Advisory only — does not gate merging.
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-    branches:
-      - master
-
+  workflow_dispatch:
 jobs:
   recommend-reviewers:
     name: Recommend reviewers
