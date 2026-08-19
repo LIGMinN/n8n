@@ -1,16 +1,7 @@
 name: 'Test: E2E VM Expressions Nightly'
 
 on:
-  schedule:
-    - cron: '0 4 * * *'
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'GitHub branch/ref to test'
-        required: false
-        type: string
-        default: 'master'
-
 jobs:
   prepare-docker:
     uses: ./.github/workflows/prepare-docker-reusable.yml
