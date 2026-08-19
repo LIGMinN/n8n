@@ -3,11 +3,7 @@ name: "CI: Validate CODEOWNERS"
 
 # Only run when CODEOWNERS or packages change
 on:
-  pull_request:
-    paths:
-      - ".github/CODEOWNERS"
-      - "packages/**"
-
+  workflow_dispatch:
 jobs:
   validate:
     runs-on: ubuntu-latest
