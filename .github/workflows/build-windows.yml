@@ -2,30 +2,6 @@ name: 'Build: Windows'
 
 on:
   workflow_dispatch:
-    inputs:
-      notify_on_failure:
-        description: 'Send Slack notification on build failure'
-        required: false
-        type: boolean
-        default: false
-  workflow_call:
-    inputs:
-      notify_on_failure:
-        description: 'Send Slack notification on build failure'
-        required: false
-        type: boolean
-        default: false
-    secrets:
-      QBOT_SLACK_TOKEN:
-        required: false
-  pull_request:
-    branches: [master]
-    paths:
-      - '**/package.json'
-      - '**/turbo.json'
-      - '.github/workflows/build-windows.yml'
-      - '.github/actions/setup-nodejs/**'
-
 jobs:
   build:
     runs-on: windows-latest
