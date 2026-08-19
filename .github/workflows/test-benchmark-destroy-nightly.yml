@@ -1,10 +1,7 @@
 name: 'Test: Benchmark Destroy Env'
 
 on:
-  schedule:
-    - cron: '0 5 * * *'
   workflow_dispatch:
-
 permissions:
   id-token: write
   contents: read
